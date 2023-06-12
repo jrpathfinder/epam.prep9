@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Event1",
+      "date": "2022-10-02T20:15:30+01:00"
+    },
+    {
+      "id": 2,
+      "title": "Event1",
+      "date": "2022-10-02T20:15:30+01:00"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "event": {
+        "id": 1,
+        "title": "Event1",
+        "date": "2022-10-02T20:15:30+01:00"
+      },
+      "user": {
+        "id": 1,
+        "name": "User1",
+        "email": "user1@bk.ru"
+      },
+      "place": 1,
+      "category": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "User1",
+      "email": "user1@bk.ru"
+    },
+    {
+      "id": 2,
+      "name": "User2",
+      "email": "user2@bk.ru"
+    }
+  ]
+}

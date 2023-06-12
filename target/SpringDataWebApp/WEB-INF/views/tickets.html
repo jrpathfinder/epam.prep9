@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ticket List</title>
+</head>
+<body>
+<h1>Ticket List</h1>
+<table border="1">
+    <tbody>
+    <tr th:each="ticket: ${tickets}">
+        <td th:text="${ticket.id}" />
+        <td th:text="${ticket.place}" />
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+
+
