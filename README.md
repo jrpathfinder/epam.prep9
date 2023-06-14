@@ -13,7 +13,9 @@ Add DAO and service objects for the new entities. Add ticketPrice field to Event
 
 4) + Update DAO objects so that they inherit from one of the Spring Data interfaces, for example – CrudRepository. 
 
-They would store and retrieve application entities from the database. Use transaction management to perform actions 
+They would store and retrieve application entities from the database. 
+
+Use transaction management to perform actions 
 in a transaction where it necessary (define the approach to implementing transactions with a mentor). 
 Configure Hibernate for work with DBMS that you choose. (1.5 points)
 

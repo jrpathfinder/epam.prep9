@@ -14,12 +14,6 @@ import java.util.Optional;
 
 /**
  * The above code is a DAO (Data Access Object) class for the Ticket model.
- * It interacts with the TicketRepository to perform CRUD (Create, Read, Update, Delete) operations on the Ticket data.
- *  The class has methods to find a ticket based on user ID, event ID, place, and category, save or update a ticket,
- *  get a list of tickets for a user or event, and get a ticket by ID.
- *  The class is annotated with @Component to indicate that it is a Spring bean and @RequiredArgsConstructor to inject the
- *  TicketRepository dependency through constructor injection.
- *  Overall, this class provides a convenient and modular way to interact with the Ticket data in the application.
  */
 @Component
 @RequiredArgsConstructor

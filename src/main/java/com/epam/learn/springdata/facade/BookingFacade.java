@@ -1,5 +1,7 @@
 package com.epam.learn.springdata.facade;
 
+import com.epam.learn.springdata.exceptions.IdNotFoundException;
+import com.epam.learn.springdata.exceptions.InsufficientFundsException;
 import com.epam.learn.springdata.model.*;
 
 
@@ -80,7 +82,7 @@ public class BookingFacade {
         userService.deleteUser(userId);
     }
 
-    public Ticket bookTicket(long userId, long eventId, int place, TicketCategory category) {
+    public Ticket bookTicket(long userId, long eventId, int place, TicketCategory category) throws InsufficientFundsException, IdNotFoundException {
         return ticketService.bookTicket(userId, eventId, place, category);
     }
 
@@ -92,11 +94,11 @@ public class BookingFacade {
         return ticketService.getByEvent(event);
     }
 
-    public boolean cancelTicket(long ticketId) {
+    public boolean cancelTicket(long ticketId) throws IdNotFoundException {
         return ticketService.cancel(ticketId);
     }
 
-    public void preloadTickets() throws IOException {
+    public void preloadTickets() throws IOException, InsufficientFundsException, IdNotFoundException {
         XmlMapper xmlMapper = new XmlMapper();
         List<Ticket> value = xmlMapper.readValue(new File("tickets.xml"), List.class);
         for (Ticket t : value) {

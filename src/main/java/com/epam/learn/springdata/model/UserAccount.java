@@ -2,6 +2,7 @@ package com.epam.learn.springdata.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 
@@ -13,12 +14,12 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
+@Accessors(chain = true)
 public class UserAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @OneToOne
-    private User userId;
+    private User user;
     private BigDecimal prepaidMoney;
 }

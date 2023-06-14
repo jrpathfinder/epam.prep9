@@ -9,8 +9,7 @@ import java.util.Optional;
 
 /**
  * The above code represents a DAO (Data Access Object) class for the UserAccount entity.
- * The getById() method returns an Optional object containing the UserAccount entity with the specified ID.
- */
+ * */
 @Repository
 @RequiredArgsConstructor
 public class UserAccountDao {

@@ -13,9 +13,8 @@ import java.io.OutputStream;
 import java.util.Map;
 
 /**
- * This class is a work around for working with iText 5.x in Spring.
+ * This class is a workaround for working with iText 5.x in Spring.
  * The code here is almost identical to the AbstractPdfView class.
- *
  */
 public abstract class AbstractITextPdfView extends AbstractView {
 

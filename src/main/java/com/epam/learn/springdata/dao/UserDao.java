@@ -10,7 +10,8 @@ import java.util.Optional;
 
 /**
  * The above code is a DAO (Data Access Object) class for the User model.
- * The class has methods to get a User by their ID or email, get a list of Users by name, save or update a User, and delete a User by their ID.
+ * The class has methods to get a User by their ID or email, get a list of Users by name, save or update a User,
+ * and delete a User by their ID.
  */
 @Component
 @RequiredArgsConstructor

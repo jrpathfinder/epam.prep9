@@ -1,6 +1,8 @@
 package com.epam.learn.springdata.controller;
 
 
+import com.epam.learn.springdata.exceptions.IdNotFoundException;
+import com.epam.learn.springdata.exceptions.InsufficientFundsException;
 import com.epam.learn.springdata.facade.BookingFacade;
 import com.epam.learn.springdata.model.Event;
 import com.epam.learn.springdata.model.Ticket;
@@ -22,8 +24,8 @@ public class TicketController {
     private final BookingFacade facade;
 
     @GetMapping("/ticket")
-    public String bookTicket(Model model, @RequestParam("userId") Integer userId, @RequestParam("eventId") Integer eventId,
-                             @RequestParam("place") Integer place, @RequestParam("category") TicketCategory category ){
+    public String bookTicket(Model model, @RequestParam("userId") Long userId, @RequestParam("eventId") Long eventId,
+                             @RequestParam("place") Integer place, @RequestParam("category") TicketCategory category ) throws InsufficientFundsException, IdNotFoundException {
         Ticket ticket = facade.bookTicket(userId, eventId, place, category);
         model.addAttribute("ticket", ticket);
         return "ticket.html";
@@ -52,12 +54,12 @@ public class TicketController {
     }
 
     @RequestMapping(value = "/ticket", method = RequestMethod.PUT)
-    public void cancel(@RequestParam("id") Integer id){
+    public void cancel(@RequestParam("id") Integer id) throws IdNotFoundException {
         facade.cancelTicket(id);
     }
 
     @GetMapping(name = "/preload")
-    public void preload() throws IOException {
+    public void preload() throws IOException, InsufficientFundsException, IdNotFoundException {
         facade.preloadTickets();
     }
 
